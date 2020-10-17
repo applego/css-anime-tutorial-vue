@@ -1,25 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <kantigaDesigner></kantigaDesigner>
   </div>
 </template>
 
 <script>
-
+import KantigaDesigner from './components/KantigaDesigner.vue'
 export default {
-  name: 'App',
+  name: 'app',
   components: {
+    KantigaDesigner
   }
 }
 </script>
 
 <style lang="scss">
+html, body{
+  margin: 0;
+  padding: 0;
+}
+body{
+  position: relative;
+  height: 100%;
+  background: url('/img/grid.svg') repeat;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin:0;
 }
 </style>
