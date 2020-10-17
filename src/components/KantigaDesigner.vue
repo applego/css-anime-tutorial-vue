@@ -4,7 +4,7 @@
     src="/img/kantigaDesigner.svg"
     alt="勘違いデザイナー"
     :style="{
-      transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`
+      transform: `translate(${x + dx}px, ${y + dy}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`
     }"
     @click="jump(50)"
   />
@@ -29,6 +29,12 @@ export default {
     scaleX: { type: Number, default: 1.0 },
     scaleY: { type: Number, default: 1.0 },
     rotate: { type: Number, default: 0 }
+  },
+  data () {
+    return {
+      dx: 0,
+      dy: 0
+    }
   },
   methods: {
     jump (height) {
