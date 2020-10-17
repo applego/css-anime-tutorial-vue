@@ -1,6 +1,6 @@
 <template>
   <img
-    class="tama-root"
+    class="kantiga-root"
     src="/img/kantigaDesigner.svg"
     alt="勘違いデザイナー"
     :style="{
@@ -11,13 +11,15 @@
 </template>
 
 <style lang="scss" scoped>
-.tama-root {
+.kantiga-root {
   position: absolute;
   left: 0;
   top: 0;
   margin: -200px auto auto -90px;
   // 削除:(動的に変更するため) transform: translate(200px, 100px);
   transform-origin: 90px 100%;
+  transition:  transform 1s ease;
+  will-change: transform;
 }
 </style>
 <script>
