@@ -44,7 +44,12 @@ export default {
   methods: {
     jump (height) {
       // todo この方法は単一責任に沿わない（warnが表示される)
-      this.y -= height
+      this.dy -= height
+      this.easing = 'ease-out'
+      window.setTimeout(() => {
+        this.dy = 0
+        this.easing = 'ease-in'
+      }, this.duration)
     }
   }
 }
