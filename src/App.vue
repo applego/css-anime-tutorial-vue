@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <kantigaDesigner :x="300" :y="400"></kantigaDesigner>
+    <kantigaDesigner
+      :x="300"
+      :y="400"
+      :scaleX="1.5"
+      :scaleY="1.5"
+      :rotate="45"
+    ></kantigaDesigner>
   </div>
 </template>
 
@@ -15,16 +21,17 @@ export default {
 </script>
 
 <style lang="scss">
-html, body{
+html,
+body {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   position: relative;
   height: 100%;
-  background: url('/img/grid.svg') repeat;
+  background: url("/img/grid.svg") repeat;
 }
 #app {
-  margin:0;
+  margin: 0;
 }
 </style>

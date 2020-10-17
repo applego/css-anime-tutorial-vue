@@ -4,7 +4,7 @@
     src="/img/kantigaDesigner.svg"
     alt="勘違いデザイナー"
     :style="{
-      transform: `translate(${x}px, ${y}px)`
+      transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`
     }"
   />
 </template>
@@ -23,7 +23,10 @@ export default {
   name: 'KantigaDesigner',
   props: {
     x: { type: Number, default: 200 },
-    y: { type: Number, default: 100 }
+    y: { type: Number, default: 100 },
+    scaleX: { type: Number, default: 1.0 },
+    scaleY: { type: Number, default: 1.0 },
+    rotate: { type: Number, default: 0 }
   }
 }
 </script>
