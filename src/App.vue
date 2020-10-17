@@ -1,11 +1,12 @@
 <template>
   <div id="app">
+    <button @click="play">Play</button>
     <kantigaDesigner
-      :x="300"
-      :y="400"
+      ref="kantigaDesigner"
+      :x="100"
+      :y="300"
       :scaleX="0.5"
       :scaleY="0.5"
-      :rotate="45"
     ></kantigaDesigner>
   </div>
 </template>
@@ -16,6 +17,16 @@ export default {
   name: 'app',
   components: {
     KantigaDesigner
+  },
+  methods: {
+    async play () {
+      const kantigaDesigner = this.$refs.kantigaDesigner
+      await kantigaDesigner.jump(100, 1500)
+      await kantigaDesigner.walk(100, 1200)
+      await kantigaDesigner.walk(60, 600)
+      await kantigaDesigner.walk(40, 400)
+      await kantigaDesigner.jump(200, 2500)
+    }
   }
 }
 </script>

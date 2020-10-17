@@ -59,10 +59,10 @@ export default {
       await this.tween({ dScaleY: 0.7, easing: 'ease' }, duration * 0.1)
       await this.tween({ dScaleY: 1.0, easing: 'ease' }, duration * 0.1)
     },
-    async wait (step = 100, duration = 500) {
-      await this.to({ dRotate: 10, dScaleY: 0.8, easing: 'ease' }, duration * 0.2)
-      await this.to({ dx: this.dx + step, dy: -step * 0.2, dRotate: -5, dScaleY: 1.1, easing: 'cubic-bezier(.04,.67,.52,1)' }, duration * 0.7)
-      await this.to
+    async walk (step = 100, duration = 500) {
+      await this.tween({ dRotate: 10, dScaleY: 0.8, easing: 'ease' }, duration * 0.2)
+      await this.tween({ dx: this.dx + step, dy: -step * 0.2, dRotate: -5, dScaleY: 1.1, easing: 'cubic-bezier(.04,.67,.52,1)' }, duration * 0.7)
+      await this.tween({ dy: 0, dRotate: 0, dScaleY: 1, easing: 'ease' }, duration * 0.1)
     }
   }
 }
