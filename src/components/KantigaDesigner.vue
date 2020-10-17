@@ -24,6 +24,7 @@
 }
 </style>
 <script>
+import Time from '@/core/Time'
 export default {
   name: 'KantigaDesigner',
   props: {
@@ -42,14 +43,22 @@ export default {
     }
   },
   methods: {
-    jump (height) {
+    async jump (height) {
       // todo この方法は単一責任に沿わない（warnが表示される)
+      // this.dy -= height
+      // this.easing = 'ease-out'
+      // window.setTimeout(() => {
+      //   this.dy = 0
+      //   this.easing = 'ease-in'
+      // }, this.duration)
+      // 下に書き換えられる(async/awaitを使うと)
+
       this.dy -= height
       this.easing = 'ease-out'
-      window.setTimeout(() => {
-        this.dy = 0
-        this.easing = 'ease-in'
-      }, this.duration)
+      await Time.wait(this.duration)
+      this.dy = 0
+      this.easing = 'ease-in'
+      await Time.wait(this.duration)
     }
   }
 }
