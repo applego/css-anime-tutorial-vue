@@ -3,8 +3,8 @@
     <kantigaDesigner
       :x="300"
       :y="400"
-      :scaleX="1.5"
-      :scaleY="1.5"
+      :scaleX="0.5"
+      :scaleY="0.5"
       :rotate="45"
     ></kantigaDesigner>
   </div>

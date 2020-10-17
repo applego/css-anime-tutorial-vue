@@ -6,6 +6,7 @@
     :style="{
       transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`
     }"
+    @click="jump(50)"
   />
 </template>
 
@@ -28,6 +29,12 @@ export default {
     scaleX: { type: Number, default: 1.0 },
     scaleY: { type: Number, default: 1.0 },
     rotate: { type: Number, default: 0 }
+  },
+  methods: {
+    jump (height) {
+      // todo この方法は単一責任に沿わない（warnが表示される)
+      this.y -= height
+    }
   }
 }
 </script>
