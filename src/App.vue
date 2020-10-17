@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <kantigaDesigner></kantigaDesigner>
+    <kantigaDesigner :x="300" :y="400"></kantigaDesigner>
   </div>
 </template>
 
