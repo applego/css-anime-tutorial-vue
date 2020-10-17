@@ -4,7 +4,8 @@
     src="/img/kantigaDesigner.svg"
     alt="勘違いデザイナー"
     :style="{
-      transform: `translate(${x + dx}px, ${y + dy}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`
+      transform: `translate(${x + dx}px, ${y + dy}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`,
+      transition: `transform ${duration}ms ${easing}`
     }"
     @click="jump(50)"
   />
@@ -35,7 +36,9 @@ export default {
   data () {
     return {
       dx: 0,
-      dy: 0
+      dy: 0,
+      duration: 1000,
+      easing: 'ease'
     }
   },
   methods: {
