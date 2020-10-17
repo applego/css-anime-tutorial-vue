@@ -16,6 +16,7 @@
   top: 0;
   margin: -200px auto auto -90px;
   // 削除:(動的に変更するため) transform: translate(200px, 100px);
+  transform-origin: 90px 100%;
 }
 </style>
 <script>
