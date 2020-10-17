@@ -43,22 +43,15 @@ export default {
     }
   },
   methods: {
+    async twiin (props, duration = 1000) {
+      Object.assign(this.$data, props)
+      this.$data.duration = duration
+      await Time.wait(duration)
+    },
     async jump (height) {
       // todo この方法は単一責任に沿わない（warnが表示される)
-      // this.dy -= height
-      // this.easing = 'ease-out'
-      // window.setTimeout(() => {
-      //   this.dy = 0
-      //   this.easing = 'ease-in'
-      // }, this.duration)
-      // 下に書き換えられる(async/awaitを使うと)
-
-      this.dy -= height
-      this.easing = 'ease-out'
-      await Time.wait(this.duration)
-      this.dy = 0
-      this.easing = 'ease-in'
-      await Time.wait(this.duration)
+      await this.tween({ dy: -height, easing: 'ease-out' }, 1000)
+      await this.tween({ dy: 0, easing: 'ease-in' }, 1000)
     }
   }
 }
